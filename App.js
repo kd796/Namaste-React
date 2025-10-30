@@ -1,15 +1,33 @@
-    // const heading = React.createElement("h1",{},"Hello workd from React!");
-    // const root = ReactDOM.createRoot(document.getElementById("root"));
-    // root.render(heading);
+import ReactDOM from "react-dom/client";
+import React from "react";
 
-  const parent = React.createElement("div",{id : "parent"}, 
-    React.createElement("div", {id: "child"},
-        [
-            React.createElement("h1", {}, "I am h1 tag"),
-            React.createElement("h2",{}, "I am h2 tag")
-        ]
-    )
+const Header = () => {
+  
+  return (<div className="header">
+    <div className="logo-container">
+      <img className="logo" src="https://png.pngtree.com/template/20191024/ourmid/pngtree-food-delivery-logo-design-fast-delivery-service-sign-image_323015.jpg"></img>
+    </div>
+    <div className="nav-items">
+      <ul>
+        <li>Home</li>
+        <li>About Us</li>
+        <li>Contact Us</li>
+        <li>Cart</li>
+      </ul>
+    </div>
+  </div>
   );
-  console.log("hello");
-  const root = ReactDOM.createRoot(document.getElementById("root"));
-  root.render(parent);
+}
+
+
+
+const AppLayout = () => {
+  return (
+    <div className="app">
+      { Header() }
+    </div>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<AppLayout/>);
